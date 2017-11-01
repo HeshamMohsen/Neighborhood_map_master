@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title>Alexandria Neighborhood Map</title>
+      <link rel="stylesheet" href="css/map.css">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+   </head>
+   <body>
+      <main class="container">
+         <button id="toggle" onclick="myFunction();">Toggle</button>
+         <article class="options-box" id="options">
+            <h1>Alexandria Best Places</h1>
+           <h1 id="#error"></h1>
+            <article>
+               <input type="text" class="form-control" name="search" data-bind="value: Query, valueUpdate: 'keyup'" autocomplete="off">
+               <ul data-bind="foreach: searchResults">
+                  <li class="places" data-bind="text: Name, click: bounce "></li>
+               </ul>
+            </article>
+         </article>
+         <div id="map"></div>
+      </main>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.2.0/knockout-min.js"></script>
+      <!-- <script src='js/knockout-3.4.0.js'></script>
+         <script src='js/jquery-1.12.0.min.js'></script> -->
+      <script src='js/map.js'></script>
+
+      <script onerror="googleMapsError();" async defer
+         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDkSdexy47duqYMxYIRSZkXskqre50GLPw&v=3&callback=initMap"></script>
+   </body>
+</html>
